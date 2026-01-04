@@ -128,16 +128,7 @@ public class Login extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(frame, "Please enter both email and password.", "Input Error",
                             JOptionPane.ERROR_MESSAGE);
                     return;
-                    /*
-                     * }else if(username.getText().isEmpty()){
-                     * JOptionPane.showMessageDialog(frame, "Please Enter your Email or Username",
-                     * "input Error", JOptionPane.ERROR_MESSAGE);
-                     * return;
-                     * }else if(password.getText().isEmpty()){
-                     * JOptionPane.showMessageDialog(frame, "Please Enter your Password",
-                     * "input Error", JOptionPane.ERROR_MESSAGE);
-                     * return;
-                     */
+                    
                 } else if (username.getText().equals("Earnest") || password.getText().equals("admin123")) {
                     JOptionPane.showMessageDialog(frame, "Welcome, " + username.getText(), null,
                             JOptionPane.ERROR_MESSAGE);

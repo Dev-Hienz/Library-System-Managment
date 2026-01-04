@@ -220,6 +220,8 @@ public class Register extends javax.swing.JPanel {
 
             }
         });
+       
+
         JButton CreateButton = new JButton();
         CreateButton.setBounds(769, 755, 210, 68);
         CreateButton.setOpaque(false);
@@ -229,11 +231,50 @@ public class Register extends javax.swing.JPanel {
         CreateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.print("Go to Dashboard");
+               
+                  if (
+                        fullname.getText().trim().isEmpty()         ||
+                        fullname.getText().equals(username)         ||
 
-            }
+                        mail.getText().trim().isEmpty()             ||
+                        mail.getText().equals(email)                ||
+
+                        si.getText().trim().isEmpty()               ||
+                        si.getText().equals(id)                     ||
+
+                        new String(pass.getPassword()).equals(password)||
+                        pass.getPassword().length == 0              ||
+
+                        new String (cp.getPassword()).equals(cpass) ||
+                        cp.getPassword().length == 0) {
+
+                            JOptionPane.showMessageDialog(frame,  
+                            "Please fill out all required fields.",
+                            "INPUT ERROR",
+                            JOptionPane.ERROR_MESSAGE
+                        );
+                                return;
+                            } 
+
+                        String Password = new String(pass.getPassword());
+                        String confirmPassword = new String(cp.getPassword());
+                        if(!Password.equals(confirmPassword)){
+                                    JOptionPane.showMessageDialog(frame, 
+                                        "Password do not match, Please Try again.", 
+                                        "REGISTRATION ERROR", 
+                                            JOptionPane.ERROR_MESSAGE);
+                                    return;
+                        }else{
+                            JOptionPane.showMessageDialog(frame, 
+                                "Acount created successfully!", 
+                                "SUCESS", 
+                                    JOptionPane.INFORMATION_MESSAGE
+                                );
+                            frame.setContentPane(new Login(frame));
+                            frame.revalidate();
+                        }
+                    }
         });
-
         add(bg);
         bg.add(btnBack);
         bg.add(fullname);
