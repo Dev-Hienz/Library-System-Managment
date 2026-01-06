@@ -46,80 +46,80 @@ public class Register extends javax.swing.JPanel {
 
         //CHANGE PLACEMENT OF TEXTS INSIDE JTEXTFIELD
 
-        JTextField fullname = new JTextField(username); // (updated po 'to) Email or username text field                                                        // --------------------------------------------
+        JTextField fullname = new JTextField(username);                                              
         fullname.setBounds(548, 276, 412, 65);
         fullname.setBackground(new Color(0xd9d9d9));
         fullname.setBorder(null);
         fullname.setFont(new Font("sanchez", Font.PLAIN, 20));
-        fullname.setForeground(Color.GRAY);// ----
-        fullname.setFocusable(false);// ----
+        fullname.setForeground(Color.GRAY);
+        fullname.setFocusable(false);
         fullname.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                fullname.setFocusable(true);// ---
-                fullname.requestFocusInWindow();// -----
+                fullname.setFocusable(true);
+                fullname.requestFocusInWindow();
                 fullname.setText("");
-                fullname.setForeground(Color.BLACK);// -----------
+                fullname.setForeground(Color.BLACK);
             }
         });
-        fullname.addFocusListener(new FocusAdapter() { // --------
+        fullname.addFocusListener(new FocusAdapter() { 
             public void focusLost(FocusEvent e) {
                 if (fullname.getText().isEmpty()) {
                     fullname.setText(username);
                     fullname.setForeground(Color.GRAY);
-                    fullname.setFocusable(false); // -----
+                    fullname.setFocusable(false); 
                 }
             }
         });
 
-        JTextField mail = new JTextField(email); // (updated po 'to) Email or username text field                                                        // --------------------------------------------
+        JTextField mail = new JTextField(email); 
         mail.setBounds(548, 368, 412, 65);
         mail.setBackground(new Color(0xd9d9d9));
         mail.setBorder(null);
         mail.setFont(new Font("sanchez", Font.PLAIN, 20));
-        mail.setForeground(Color.GRAY);// ----
-        mail.setFocusable(false);// ----
+        mail.setForeground(Color.GRAY);
+        mail.setFocusable(false);
         mail.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                mail.setFocusable(true);// ---
-                mail.requestFocusInWindow();// -----
+                mail.setFocusable(true);
+                mail.requestFocusInWindow();
                 mail.setText("");
-                mail.setForeground(Color.BLACK);// -----------
+                mail.setForeground(Color.BLACK);
             }
         });
-        mail.addFocusListener(new FocusAdapter() { // --------
+        mail.addFocusListener(new FocusAdapter() { 
             public void focusLost(FocusEvent e) {
                 if (mail.getText().isEmpty()) {
                     mail.setText(email);
                     mail.setForeground(Color.GRAY);
-                    mail.setFocusable(false); // -----
+                    mail.setFocusable(false); 
                 }
             }
         });
 
-        JTextField si = new JTextField(id); // (updated po 'to) Email or username text field                                                        // --------------------------------------------
+        JTextField si = new JTextField(id); 
         si.setBounds(548, 460, 412, 65);
         si.setBackground(new Color(0xd9d9d9));
         si.setBorder(null);
         si.setFont(new Font("sanchez", Font.PLAIN, 20));
-        si.setForeground(Color.GRAY);// ----
-        si.setFocusable(false);// ----
+        si.setForeground(Color.GRAY);
+        si.setFocusable(false);
         si.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                si.setFocusable(true);// ---
-                si.requestFocusInWindow();// -----
+                si.setFocusable(true);
+                si.requestFocusInWindow();
                 si.setText("");
-                si.setForeground(Color.BLACK);// -----------
+                si.setForeground(Color.BLACK);
             }
         });
-        si.addFocusListener(new FocusAdapter() { // --------
+        si.addFocusListener(new FocusAdapter() { 
             public void focusLost(FocusEvent e) {
                 if (si.getText().isEmpty()) {
                     si.setText(id);
                     si.setForeground(Color.GRAY);
-                    si.setFocusable(false); // -----
+                    si.setFocusable(false); 
                 }
             }
         });

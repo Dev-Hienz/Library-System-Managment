@@ -7,6 +7,7 @@ import javax.swing.*;
 public class Login extends javax.swing.JPanel {
 
     private MainFrame frame;
+    
 
     public Login(MainFrame frame) {
         this.frame = frame;
@@ -17,78 +18,65 @@ public class Login extends javax.swing.JPanel {
     public void panel() {
 
         this.setLayout(null);
-
+        
         JLabel bg = new JLabel();
         bg.setBounds(0, 0, 1512, 982);
-        bg.setIcon(new ImageIcon("C:\\Users\\franc\\Desktop\\Library System Managment\\Library System Managment\\IMAGES\\Login page.png"));
+        bg.setIcon(new ImageIcon("C:\\Users\\franc\\OneDrive\\Documents\\GitHub\\Library-System-Managment\\Library System Managment\\Library System Managment\\IMAGES\\Login page.png"));
         bg.setLayout(null);
 
-        String text_placeholder = "Enter your Username"; 
+        String text_placeholder = "Enter your Email/Username";
 
-        JTextField username = new JTextField(text_placeholder); 
-                                                                
+        JTextField username = new JTextField(text_placeholder);
         username.setBounds(548, 422, 412, 65);
         username.setBackground(new Color(0xd9d9d9));
         username.setBorder(null);
-        
         username.setFont(new Font("sanchez", Font.PLAIN, 20));
         username.setForeground(Color.GRAY);
+     
+        username.addFocusListener(new FocusAdapter() {
 
-        username.setFocusable(false);
-
-        username.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                username.setFocusable(true);
-                username.requestFocusInWindow();
-
-                username.setText("");
-                username.setForeground(Color.BLACK);
-            }
-        });
-        username.addFocusListener(new FocusAdapter() { 
-
-            public void focusLost(FocusEvent e) {
-                if (username.getText().isEmpty()) {
-                    username.setText(text_placeholder);
-                    username.setForeground(Color.GRAY);
-                    username.setFocusable(false); 
-              }
-            }
-        });
-
+            public void focusGained(FocusEvent e) {
+            if (username.getText().equals(text_placeholder)) {
+            username.setText("");
+            username.setForeground(Color.BLACK);
+        }
+    }
+            @Override
+        public void focusLost(FocusEvent e) {
+            if (username.getText().isEmpty()) {
+            username.setText(text_placeholder);
+            username.setForeground(Color.GRAY);
+        }
+    }
+});
         String pass_Placefolder = "Enter your password"; 
 
         JPasswordField password = new JPasswordField(pass_Placefolder); // Password field
-                                                                        
+        password.setBounds(548, 528, 412,65);                                                               
         password.setBackground(new Color(0xd9d9d9));
         password.setBorder(null);
         password.setFont(new Font("sanchez", Font.PLAIN, 20));
         password.setForeground(Color.GRAY); 
         password.setEchoChar((char) 0);
 
-        password.setFocusable(false);
-
-        password.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                password.setFocusable(true);
-                password.requestFocusInWindow();
-
-                password.setText("");
-                password.setForeground(Color.BLACK);
-                password.setEchoChar('•');
-
-            }
-        });
+        
 
         password.addFocusListener(new FocusAdapter() {
-            public void focusLost(FocusEvent e) {
-                if (password.getPassword().length == 0) {
+            @Override
+            public void focusGained(FocusEvent e) {
+                String currentText = new String(password.getPassword());
+                if(currentText.equals(pass_Placefolder)){
+                    password.setText("");
+                    password.setForeground(Color.BLACK);
+                    password.setEchoChar('•');
+                }
+            }
+            public void focusLost(FocusEvent e){
+                if(password.getPassword().length == 0){
                     password.setText(pass_Placefolder);
-                    password.setForeground(Color.GRAY);
-                    password.setEchoChar((char) (0));
-                    password.setFocusable(false); 
+                    password.setForeground(Color.gray);
+                    password.setEchoChar((char) 0);
                 }
             }
         });
