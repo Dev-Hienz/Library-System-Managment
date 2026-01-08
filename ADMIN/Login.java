@@ -20,7 +20,7 @@ public class Login extends javax.swing.JPanel {
         this.setLayout(null);
         
         JLabel bg = new JLabel();
-        bg.setBounds(0, 0, 1512, 982);
+        bg.setBounds(0,0,1512, 982);
         bg.setIcon(new ImageIcon("PEKTURS\\LOGIN PAGE.png"));
         bg.setLayout(null);
         
