@@ -21,13 +21,13 @@ public class Login extends javax.swing.JPanel {
         
         JLabel bg = new JLabel();
         bg.setBounds(0, 0, 1512, 982);
-        bg.setIcon(new ImageIcon("PEKTURS\\LOGIN PAGE.png"));
+        bg.setIcon(new ImageIcon("PEKTURS/LOGIN PAGE.png"));
         bg.setLayout(null);
         
         String text_placeholder = "Enter your Email/Username";
 
         JTextField username = new JTextField(text_placeholder);
-        username.setBounds(548, 422, 412, 65);
+        username.setBounds(160, 435, 412, 56);
         username.setBackground(new Color(0xd9d9d9));
         username.setBorder(null);
         username.setFont(new Font("sanchez", Font.PLAIN, 20));
@@ -53,7 +53,7 @@ public class Login extends javax.swing.JPanel {
         String pass_Placefolder = "Enter your password"; 
 
         JPasswordField password = new JPasswordField(pass_Placefolder); // Password field
-        password.setBounds(548, 528, 412,65);                                                               
+        password.setBounds(160, 538, 412,65);                                                               
         password.setBackground(new Color(0xd9d9d9));
         password.setBorder(null);
         password.setFont(new Font("sanchez", Font.PLAIN, 20));
@@ -82,7 +82,7 @@ public class Login extends javax.swing.JPanel {
         });
 
         JButton clearButton = new JButton();
-        clearButton.setBounds(532, 645, 210, 68);
+        clearButton.setBounds(138, 655, 210, 68);
         clearButton.setOpaque(false);
         clearButton.setContentAreaFilled(false);
         clearButton.setBorderPainted(false);
@@ -100,7 +100,7 @@ public class Login extends javax.swing.JPanel {
         });
 
         JButton loginButton = new JButton();
-        loginButton.setBounds(770, 645, 210, 68);
+        loginButton.setBounds(375, 655, 210, 68);
         loginButton.setOpaque(false);
         loginButton.setContentAreaFilled(false);
         loginButton.setBorderPainted(false);
@@ -134,7 +134,7 @@ public class Login extends javax.swing.JPanel {
         });
 
         JButton registernow = new JButton();
-        registernow.setBounds(784, 763, 123, 23);
+        registernow.setBounds(390, 774, 106, 19);
         registernow.setOpaque(false);
         registernow.setContentAreaFilled(false);
         registernow.setBorderPainted(false);

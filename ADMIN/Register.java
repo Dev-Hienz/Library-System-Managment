@@ -20,7 +20,7 @@ public class Register extends javax.swing.JPanel {
 
         JLabel bg = new JLabel();
         bg.setBounds(0, 0, 1512, 982);
-        bg.setIcon(new ImageIcon("PEKTURS\\REGISTER PAGE.png"));
+        bg.setIcon(new ImageIcon("PEKTURS/REGISTER PAGE .png"));
         bg.setLayout(null);
 
         JButton btnBack = new JButton();
