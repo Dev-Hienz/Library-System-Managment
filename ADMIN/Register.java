@@ -20,7 +20,7 @@ public class Register extends javax.swing.JPanel {
 
         JLabel bg = new JLabel();
         bg.setBounds(0, 0, 1512, 982);
-        bg.setIcon(new ImageIcon("PEKTURS\\REGISTER PAGE.png"));
+        bg.setIcon(new ImageIcon("PEKTURS\\LOGIN PAGE.png"));
         bg.setLayout(null);
 
         JButton btnBack = new JButton();
@@ -39,15 +39,8 @@ public class Register extends javax.swing.JPanel {
         });
 
         String username = "Enter Fullname";
-        String email = "Enter Email";
-        String id = "Enter Student ID";
-        String password = "Enter Password";
-        String cpass = "Enter Confirm Password";
-
-        //CHANGE PLACEMENT OF TEXTS INSIDE JTEXTFIELD
-
         JTextField fullname = new JTextField(username);                                              
-        fullname.setBounds(548, 276, 412, 65);
+        fullname.setBounds(174, 264, 412, 65);
         fullname.setBackground(new Color(0xd9d9d9));
         fullname.setBorder(null);
         fullname.setFont(new Font("sanchez", Font.PLAIN, 20));
@@ -72,6 +65,7 @@ public class Register extends javax.swing.JPanel {
             }
         });
 
+        String email = "Enter Email"; //Email =============================================
         JTextField mail = new JTextField(email); 
         mail.setBounds(548, 368, 412, 65);
         mail.setBackground(new Color(0xd9d9d9));
@@ -98,6 +92,7 @@ public class Register extends javax.swing.JPanel {
             }
         });
 
+        String id = "Enter Student ID"; // student ID ================================
         JTextField si = new JTextField(id); 
         si.setBounds(548, 460, 412, 65);
         si.setBackground(new Color(0xd9d9d9));
@@ -124,7 +119,8 @@ public class Register extends javax.swing.JPanel {
             }
         });
 
-        JPasswordField pass = new JPasswordField(password); // Password field
+        String password = "Enter Password"; // Password field ================================
+        JPasswordField pass = new JPasswordField(password); 
         pass.setBounds(548, 556, 412, 65);                                                               
         pass.setBackground(new Color(0xd9d9d9));
         pass.setBorder(null);
@@ -159,37 +155,37 @@ public class Register extends javax.swing.JPanel {
         });
 
         
+        String cpass = "Enter Confirm Password"; //Conform password =========                                              
+        JPasswordField cpass_input = new JPasswordField(cpass);   
+        cpass_input.setBounds(548, 648, 412, 65);
+        cpass_input.setBackground(new Color(0xd9d9d9));
+        cpass_input.setBorder(null);
+        cpass_input.setFont(new Font("sanchez", Font.PLAIN, 20));
+        cpass_input.setForeground(Color.GRAY);
+        cpass_input.setEchoChar((char) 0);
 
-        JPasswordField cp = new JPasswordField(cpass);   //Conform password =========                                              
-        cp.setBounds(548, 648, 412, 65);
-        cp.setBackground(new Color(0xd9d9d9));
-        cp.setBorder(null);
-        cp.setFont(new Font("sanchez", Font.PLAIN, 20));
-        cp.setForeground(Color.GRAY);
-        cp.setEchoChar((char) 0);
-
-        cp.setFocusable(false);
+        cpass_input.setFocusable(false);
         
 
-        cp.addMouseListener(new MouseAdapter() {
+        cpass_input.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                cp.setFocusable(true);
-                cp.requestFocusInWindow();
+                cpass_input.setFocusable(true);
+                cpass_input.requestFocusInWindow();
 
-                cp.setText("");
-                cp.setForeground(Color.BLACK);
-                cp.setEchoChar('•');
+                cpass_input.setText("");
+                cpass_input.setForeground(Color.BLACK);
+                cpass_input.setEchoChar('•');
             }
         });
 
-        cp.addFocusListener(new FocusAdapter() { 
+        cpass_input.addFocusListener(new FocusAdapter() { 
             public void focusLost(FocusEvent e) {
-                if (cp.getPassword().length == 0) {
-                    cp.setText(cpass);
-                    cp.setForeground(Color.GRAY);
-                    cp.setEchoChar((char)(0));
-                    cp.setFocusable(false); 
+                if (cpass_input.getPassword().length == 0) {
+                    cpass_input.setText(cpass);
+                    cpass_input.setForeground(Color.GRAY);
+                    cpass_input.setEchoChar((char)(0));
+                    cpass_input.setFocusable(false); 
                 }
             }
         });
@@ -212,9 +208,9 @@ public class Register extends javax.swing.JPanel {
                 pass.setText(password);
                 pass.setEchoChar((char) (0));
                 pass.setForeground(Color.GRAY);
-                cp.setText(cpass);
-                cp.setEchoChar((char)(0));
-                cp.setForeground(Color.GRAY);
+                cpass_input.setText(cpass);
+                cpass_input.setEchoChar((char)(0));
+                cpass_input.setForeground(Color.GRAY);
                
                 
 
@@ -245,8 +241,8 @@ public class Register extends javax.swing.JPanel {
                         new String(pass.getPassword()).equals(password)||
                         pass.getPassword().length == 0              ||
 
-                        new String (cp.getPassword()).equals(cpass) ||
-                        cp.getPassword().length == 0) {
+                        new String (cpass_input.getPassword()).equals(cpass) ||
+                        cpass_input.getPassword().length == 0) {
 
                             JOptionPane.showMessageDialog(frame,  
                             "Please fill out all required fields.",
@@ -257,7 +253,7 @@ public class Register extends javax.swing.JPanel {
                             } 
 
                         String Password = new String(pass.getPassword());
-                        String confirmPassword = new String(cp.getPassword());
+                        String confirmPassword = new String(cpass_input.getPassword());
                         if(!Password.equals(confirmPassword)){
                                     JOptionPane.showMessageDialog(frame, 
                                         "Password do not match, Please Try again.", 
@@ -281,7 +277,7 @@ public class Register extends javax.swing.JPanel {
         bg.add(mail);
         bg.add(si);
         bg.add(pass);
-        bg.add(cp);
+        bg.add(cpass_input);
         bg.add(clearButton);
         bg.add(CreateButton);
 
