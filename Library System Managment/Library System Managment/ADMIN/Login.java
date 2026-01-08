@@ -19,9 +19,12 @@ public class Login extends javax.swing.JPanel {
 
         this.setLayout(null);
         
-        JLabel bg = new JLabel();
+        
+        ImageIcon icon = new ImageIcon(
+            "C:\\Users\\franc\\Desktop\\Library-System-Managment\\Library System Managment\\Library System Managment\\IMAGES\\Login page.png"
+        );
+        JLabel bg = new JLabel(icon);
         bg.setBounds(0, 0, 1512, 982);
-        bg.setIcon(new ImageIcon("C:\\Users\\franc\\OneDrive\\Documents\\GitHub\\Library-System-Managment\\Library System Managment\\Library System Managment\\IMAGES\\Login page.png"));
         bg.setLayout(null);
 
         String text_placeholder = "Enter your Email/Username";
