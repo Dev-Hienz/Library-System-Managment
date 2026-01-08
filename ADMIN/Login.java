@@ -53,7 +53,7 @@ public class Login extends javax.swing.JPanel {
         String pass_Placefolder = "Enter your password"; 
 
         JPasswordField password = new JPasswordField(pass_Placefolder); // Password field
-        password.setBounds(548, 528, 412,65);                                                               
+        password.setBounds(160, 539, 412,65);                                                               
         password.setBackground(new Color(0xd9d9d9));
         password.setBorder(null);
         password.setFont(new Font("sanchez", Font.PLAIN, 20));
