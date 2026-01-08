@@ -19,10 +19,6 @@ public class Login extends javax.swing.JPanel {
 
         this.setLayout(null);
         
-        
-        ImageIcon icon = new ImageIcon(
-            "C:\\Users\\franc\\Desktop\\Library-System-Managment\\Library System Managment\\Library System Managment\\IMAGES\\Login page.png"
-        );
         JLabel bg = new JLabel(icon);
         bg.setBounds(0, 0, 1512, 982);
         bg.setIcon(new ImageIcon("PEKTURS\\LOGIN PAGE.png"));
