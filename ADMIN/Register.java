@@ -20,12 +20,12 @@ public class Register extends javax.swing.JPanel {
 
         JLabel bg = new JLabel();
         bg.setBounds(0, 0, 1512, 982);
-        bg.setIcon(new ImageIcon("PEKTURS\\LOGIN PAGE.png"));
+        bg.setIcon(new ImageIcon("PEKTURS/REGISTER PAGE .png"));
         bg.setLayout(null);
 
         JButton btnBack = new JButton();
         btnBack.setForeground(Color.BLACK);
-        btnBack.setBounds(793,854,92,19);
+        btnBack.setBounds(431,826,92,19);
         btnBack.setOpaque(false);
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
@@ -40,8 +40,8 @@ public class Register extends javax.swing.JPanel {
 
         String username = "Enter Fullname";
         JTextField fullname = new JTextField(username);                                              
-        fullname.setBounds(174, 264, 412, 65);
-        fullname.setBackground(new Color(0xd9d9d9));
+        fullname.setBounds(174, 246, 412, 65);
+        fullname.setBackground(new Color(0xF5F6FA));
         fullname.setBorder(null);
         fullname.setFont(new Font("sanchez", Font.PLAIN, 20));
         fullname.setForeground(Color.GRAY);
@@ -67,8 +67,8 @@ public class Register extends javax.swing.JPanel {
 
         String email = "Enter Email"; //Email =============================================
         JTextField mail = new JTextField(email); 
-        mail.setBounds(548, 368, 412, 65);
-        mail.setBackground(new Color(0xd9d9d9));
+        mail.setBounds(174, 340, 412, 65);
+        mail.setBackground(new Color(0xF5F6FA));
         mail.setBorder(null);
         mail.setFont(new Font("sanchez", Font.PLAIN, 20));
         mail.setForeground(Color.GRAY);
@@ -94,8 +94,8 @@ public class Register extends javax.swing.JPanel {
 
         String id = "Enter Student ID"; // student ID ================================
         JTextField si = new JTextField(id); 
-        si.setBounds(548, 460, 412, 65);
-        si.setBackground(new Color(0xd9d9d9));
+        si.setBounds(174, 434, 412, 65);
+        si.setBackground(new Color(0xF5F6FA));
         si.setBorder(null);
         si.setFont(new Font("sanchez", Font.PLAIN, 20));
         si.setForeground(Color.GRAY);
@@ -121,8 +121,8 @@ public class Register extends javax.swing.JPanel {
 
         String password = "Enter Password"; // Password field ================================
         JPasswordField pass = new JPasswordField(password); 
-        pass.setBounds(548, 556, 412, 65);                                                               
-        pass.setBackground(new Color(0xd9d9d9));
+        pass.setBounds(174, 528, 412, 65);                                                               
+        pass.setBackground(new Color(0xF5F6FA));
         pass.setBorder(null);
         pass.setFont(new Font("sanchez", Font.PLAIN, 20));
         pass.setForeground(Color.GRAY); 
@@ -157,8 +157,8 @@ public class Register extends javax.swing.JPanel {
         
         String cpass = "Enter Confirm Password"; //Conform password =========                                              
         JPasswordField cpass_input = new JPasswordField(cpass);   
-        cpass_input.setBounds(548, 648, 412, 65);
-        cpass_input.setBackground(new Color(0xd9d9d9));
+        cpass_input.setBounds(176, 623, 412, 63);
+        cpass_input.setBackground(new Color(0xF5F6FA));
         cpass_input.setBorder(null);
         cpass_input.setFont(new Font("sanchez", Font.PLAIN, 20));
         cpass_input.setForeground(Color.GRAY);
@@ -191,7 +191,7 @@ public class Register extends javax.swing.JPanel {
         });
 
         JButton clearButton = new JButton();
-        clearButton.setBounds(532, 755, 211, 68);
+        clearButton.setBounds(149, 727, 210, 68);
         clearButton.setOpaque(false);
         clearButton.setContentAreaFilled(false);
         clearButton.setBorderPainted(false);
@@ -219,7 +219,7 @@ public class Register extends javax.swing.JPanel {
        
 
         JButton CreateButton = new JButton();
-        CreateButton.setBounds(769, 755, 210, 68);
+        CreateButton.setBounds(387, 727, 210, 68);
         CreateButton.setOpaque(false);
         CreateButton.setContentAreaFilled(false);
         CreateButton.setBorderPainted(false);
