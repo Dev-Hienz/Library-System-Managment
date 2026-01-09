@@ -219,17 +219,15 @@ public class Register extends javax.swing.JPanel {
             public void actionPerformed(ActionEvent e) {
                
                   if (
-                        fullname.getText().trim().isEmpty()         ||
+                        fullname.getText().trim().isEmpty()                     ||
                         fullname.getText().equals(username_Placeholder)         ||
-
-                        mail.getText().trim().isEmpty()             ||
+                        mail.getText().trim().isEmpty()                         ||
                         mail.getText().equals(email_Placeholder)                ||
-
-                        Stduent_ID.getText().trim().isEmpty()               ||
-                        Stduent_ID.getText().equals(id_Placeholder)                     ||
+                        Stduent_ID.getText().trim().isEmpty()                   ||
+                        Stduent_ID.getText().equals(id_Placeholder)             ||
 
                         new String(password.getPassword()).equals(password_Placeholder)||
-                        password.getPassword().length == 0              ||
+                        password.getPassword().length == 0                      ||
 
                         new String (confimrPass.getPassword()).equals(ConfirmPass_Placehodler) ||
                         confimrPass.getPassword().length == 0) {

@@ -22,7 +22,7 @@ public class Login extends javax.swing.JPanel {
         
         JLabel bg = new JLabel();
         bg.setBounds(0, 0, 1512, 982);
-        bg.setIcon(new ImageIcon("PEKTURS\\LOGIN PAGE(tempo).png"));
+        bg.setIcon(new ImageIcon("PEKTURS/LOGIN PAGE(tempo).png"));
         bg.setLayout(null);
         
         String text_placeholder = "Enter your Email/Username";
@@ -65,13 +65,13 @@ public class Login extends javax.swing.JPanel {
             password.setEchoChar((char) 0); // show placeholder
 
             ImageIcon eyeOpen = new ImageIcon(
-                new ImageIcon("PEKTURS\\eye (2).png")
+                new ImageIcon("PEKTURS/eye (2).png")
                     .getImage()
                     .getScaledInstance(30, 30, Image.SCALE_SMOOTH)
             );
 
             ImageIcon eyeClosed = new ImageIcon(
-                new ImageIcon("PEKTURS\\hidden.png")
+                new ImageIcon("PEKTURS/hidden.png")
                     .getImage()
                     .getScaledInstance(30, 30, Image.SCALE_SMOOTH)
             );
@@ -159,7 +159,11 @@ public class Login extends javax.swing.JPanel {
 
                 // CONNECT TO DB`
 
-                if (username.getText().isEmpty() || password.getText().isEmpty()) {
+
+                if (username.getText().trim().isEmpty() ||
+                username.getText().equals(text_placeholder)  ||
+                new String(password.getPassword()).equals(pass_Placeholder)||
+                            password.getPassword().length == 0){
                     JOptionPane.showMessageDialog(frame, "Please enter both email and password.", "Input Error",
                             JOptionPane.ERROR_MESSAGE);
                     return;
