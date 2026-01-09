@@ -17,7 +17,8 @@ public class Register extends javax.swing.JPanel {
     public void panel(){
 
         this.setLayout(null);
-
+        this.setPreferredSize(new Dimension(1512, 982));
+    
         JLabel bg = new JLabel();
         bg.setBounds(0, 0, 1512, 982);
         bg.setIcon(new ImageIcon("PEKTURS/REGISTER PAGE .png"));

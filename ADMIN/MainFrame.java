@@ -1,15 +1,16 @@
 package ADMIN;
 
-import java.util.*;
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JFrame;
 
 public class MainFrame extends javax.swing.JFrame {
 
     public MainFrame() {
         setContentPane(new Login(this));
-        setSize(1512, 982);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        pack();
         setLocationRelativeTo(null);
+        setResizable(false);
         setVisible(true);
 
 
