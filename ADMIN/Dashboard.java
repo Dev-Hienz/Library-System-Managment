@@ -1,6 +1,8 @@
 package ADMIN;
 
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Dashboard extends javax.swing.JPanel {
@@ -20,7 +22,25 @@ public class Dashboard extends javax.swing.JPanel {
         background.setIcon(new ImageIcon("PEKTURS\\Admin_Dashboard.png"));
         background.setLayout(null);
 
+        JButton Book_Management = new JButton();
+        Book_Management.setBounds(118, 384, 210, 27);
+        Book_Management.setOpaque(false);
+        Book_Management.setContentAreaFilled(false);
+        Book_Management.setBorderPainted(false);
+        Book_Management.setFocusPainted(false);
+
+        Book_Management.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                System.out.println("switching to Book Management");
+                frame.setContentPane(new BookManagement(frame));
+                frame.revalidate();
+                frame.pack();
+            }
+        });
+
+
         this.add(background);
+        background.add(Book_Management);
     }
 }
 

@@ -2,6 +2,7 @@ package ADMIN;
 
 import javax.swing.JFrame;
 
+
 public class MainFrame extends javax.swing.JFrame {
 
     public MainFrame() {
