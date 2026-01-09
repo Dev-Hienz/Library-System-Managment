@@ -21,7 +21,7 @@ public class Login extends javax.swing.JPanel {
         
         JLabel bg = new JLabel();
         bg.setBounds(0, 0, 1512, 982);
-        bg.setIcon(new ImageIcon("PEKTURS\\LOGIN PAGE.png"));
+        bg.setIcon(new ImageIcon("PEKTURS\\LOGIN PAGE(tempo).png"));
         bg.setLayout(null);
         
         String text_placeholder = "Enter your Email/Username";
@@ -50,36 +50,82 @@ public class Login extends javax.swing.JPanel {
             }
             }
         });
-        String pass_Placefolder = "Enter your password"; 
+// ================= PASSWORD FIELD =================
 
-        JPasswordField password = new JPasswordField(pass_Placefolder); // Password field
-        password.setBounds(160, 539, 412,65);                                                               
-        password.setBackground(new Color(0xd9d9d9));
-        password.setBorder(null);
-        password.setFont(new Font("sanchez", Font.PLAIN, 20));
-        password.setForeground(Color.GRAY); 
-        password.setEchoChar((char) 0);
+            String pass_Placeholder = "Enter your password";
 
-        
 
-        password.addFocusListener(new FocusAdapter() {
+            JPasswordField password = new JPasswordField(pass_Placeholder);
+            password.setBounds(160, 539, 370, 65);
+            password.setBackground(new Color(0xd9d9d9));
+            password.setBorder(null);
+            password.setFont(new Font("Sanchez", Font.PLAIN, 20));
+            password.setForeground(Color.GRAY);
+            password.setEchoChar((char) 0); // show placeholder
+
+            ImageIcon eyeOpen = new ImageIcon(
+                new ImageIcon("PEKTURS\\eye (2).png")
+                    .getImage()
+                    .getScaledInstance(30, 30, Image.SCALE_SMOOTH)
+            );
+
+            ImageIcon eyeClosed = new ImageIcon(
+                new ImageIcon("PEKTURS\\hidden.png")
+                    .getImage()
+                    .getScaledInstance(30, 30, Image.SCALE_SMOOTH)
+            );
+
+
+                // Show / Hide Checkbox (Eye)
+            JCheckBox showPassword = new JCheckBox();
+            showPassword.setBounds(530, 557, 35, 30);
+            showPassword.setIcon(eyeClosed);
+            showPassword.setSelectedIcon(eyeOpen);
+            showPassword.setBorder(null);
+            showPassword.setContentAreaFilled(false);
+            showPassword.setOpaque(false);
+            showPassword.setFocusPainted(false);
+
+            showPassword.addActionListener(e -> {
+                String text = new String(password.getPassword());
+
+                    if (!text.equals(pass_Placeholder)) {
+                    if (showPassword.isSelected()) {
+                            password.setEchoChar((char) 0); 
+                    } else {
+                        password.setEchoChar('•');     
+                    }
+                    }
+                });
+
+
+           
+            password.addFocusListener(new FocusAdapter() {
+
             @Override
             public void focusGained(FocusEvent e) {
                 String currentText = new String(password.getPassword());
-                if(currentText.equals(pass_Placefolder)){
+
+                if (currentText.equals(pass_Placeholder)) {
                     password.setText("");
                     password.setForeground(Color.BLACK);
+
+                    // Hide password unless checkbox is selected
+                    if (!showPassword.isSelected()) {
                     password.setEchoChar('•');
+                    
+                    }
                 }
-            }
-            public void focusLost(FocusEvent e){
-                if(password.getPassword().length == 0){
-                    password.setText(pass_Placefolder);
-                    password.setForeground(Color.gray);
-                    password.setEchoChar((char) 0);
                 }
-            }
-        });
+                @Override
+                public void focusLost(FocusEvent e) {
+                    if (password.getPassword().length == 0) {
+                    password.setText(pass_Placeholder);
+                    password.setForeground(Color.GRAY);
+                    password.setEchoChar((char) 0); 
+                }
+                }
+            });
 
         JButton clearButton = new JButton();
         clearButton.setBounds(138, 655, 210, 68);
@@ -91,7 +137,7 @@ public class Login extends javax.swing.JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 username.setText(text_placeholder);
-                password.setText(pass_Placefolder);
+                password.setText(pass_Placeholder);
                 password.setEchoChar((char) (0));
                 username.setForeground(Color.GRAY);
                 password.setForeground(Color.GRAY);
@@ -148,6 +194,7 @@ public class Login extends javax.swing.JPanel {
             }
         });
 
+        bg.add(showPassword);
         bg.add(username);
         bg.add(password);
         bg.add(clearButton);
