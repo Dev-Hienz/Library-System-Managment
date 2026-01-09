@@ -38,154 +38,143 @@ public class Register extends javax.swing.JPanel {
             }
         });
 
-        String username = "Enter Fullname";
-        JTextField fullname = new JTextField(username);                                              
+        String username_Placeholder = "Enter Fullname";
+
+        JTextField fullname = new JTextField(username_Placeholder);                                              
         fullname.setBounds(174, 246, 412, 65);
         fullname.setBackground(new Color(0xF5F6FA));
         fullname.setBorder(null);
         fullname.setFont(new Font("sanchez", Font.PLAIN, 20));
         fullname.setForeground(Color.GRAY);
-        fullname.setFocusable(false);
-        fullname.addMouseListener(new MouseAdapter() {
+
+        fullname.addFocusListener(new FocusAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                fullname.setFocusable(true);
-                fullname.requestFocusInWindow();
-                fullname.setText("");
-                fullname.setForeground(Color.BLACK);
-            }
-        });
-        fullname.addFocusListener(new FocusAdapter() { 
-            public void focusLost(FocusEvent e) {
-                if (fullname.getText().isEmpty()) {
-                    fullname.setText(username);
-                    fullname.setForeground(Color.GRAY);
-                    fullname.setFocusable(false); 
+            public void focusGained(FocusEvent e) {
+                if(fullname.getText().equals(username_Placeholder)){
+                    fullname.setText("");
+                    fullname.setForeground(Color.BLACK);
+                    }
                 }
-            }
+        
+            public void focusLost(FocusEvent e) { 
+            if (fullname.getText().isEmpty()){
+                fullname.setText(username_Placeholder);
+                fullname.setForeground(Color.gray);
+                    }
+                }
         });
 
-        String email = "Enter Email"; //Email =============================================
-        JTextField mail = new JTextField(email); 
+        String email_Placeholder = "Enter Email"; //Email =============================================
+        
+        JTextField mail = new JTextField(email_Placeholder); 
         mail.setBounds(174, 340, 412, 65);
         mail.setBackground(new Color(0xF5F6FA));
         mail.setBorder(null);
         mail.setFont(new Font("sanchez", Font.PLAIN, 20));
         mail.setForeground(Color.GRAY);
-        mail.setFocusable(false);
-        mail.addMouseListener(new MouseAdapter() {
+        
+        mail.addFocusListener(new FocusAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                mail.setFocusable(true);
-                mail.requestFocusInWindow();
+            public void focusGained(FocusEvent e) {
+                if(mail.getText().equals(email_Placeholder)){
                 mail.setText("");
                 mail.setForeground(Color.BLACK);
+                }
             }
-        });
-        mail.addFocusListener(new FocusAdapter() { 
-            public void focusLost(FocusEvent e) {
+        
+                public void focusLost(FocusEvent e) {
                 if (mail.getText().isEmpty()) {
-                    mail.setText(email);
+                    mail.setText(email_Placeholder);
                     mail.setForeground(Color.GRAY);
-                    mail.setFocusable(false); 
                 }
             }
         });
 
-        String id = "Enter Student ID"; // student ID ================================
-        JTextField si = new JTextField(id); 
-        si.setBounds(174, 434, 412, 65);
-        si.setBackground(new Color(0xF5F6FA));
-        si.setBorder(null);
-        si.setFont(new Font("sanchez", Font.PLAIN, 20));
-        si.setForeground(Color.GRAY);
-        si.setFocusable(false);
-        si.addMouseListener(new MouseAdapter() {
+        String id_Placeholder = "Enter Student ID"; // student ID ================================
+        
+        JTextField Stduent_ID = new JTextField(id_Placeholder); 
+        Stduent_ID.setBounds(174, 434, 412, 65);
+        Stduent_ID.setBackground(new Color(0xF5F6FA));
+        Stduent_ID.setBorder(null);
+        Stduent_ID.setFont(new Font("sanchez", Font.PLAIN, 20));
+        Stduent_ID.setForeground(Color.GRAY);
+        
+        Stduent_ID.addFocusListener(new FocusAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                si.setFocusable(true);
-                si.requestFocusInWindow();
-                si.setText("");
-                si.setForeground(Color.BLACK);
+            public void focusGained(FocusEvent e) {
+                if(Stduent_ID.getText().equals(id_Placeholder)){
+                Stduent_ID.setText("");
+                Stduent_ID.setForeground(Color.BLACK);
+                }
             }
-        });
-        si.addFocusListener(new FocusAdapter() { 
+        
             public void focusLost(FocusEvent e) {
-                if (si.getText().isEmpty()) {
-                    si.setText(id);
-                    si.setForeground(Color.GRAY);
-                    si.setFocusable(false); 
+                if (Stduent_ID.getText().isEmpty()) {
+                    Stduent_ID.setText(id_Placeholder);
+                    Stduent_ID.setForeground(Color.GRAY);
                 }
             }
         });
 
-        String password = "Enter Password"; // Password field ================================
-        JPasswordField pass = new JPasswordField(password); 
-        pass.setBounds(174, 528, 412, 65);                                                               
-        pass.setBackground(new Color(0xF5F6FA));
-        pass.setBorder(null);
-        pass.setFont(new Font("sanchez", Font.PLAIN, 20));
-        pass.setForeground(Color.GRAY); 
-        pass.setEchoChar((char) 0);
+        String password_Placeholder = "Enter Password"; // Password field ================================
+        
+        JPasswordField password = new JPasswordField(password_Placeholder); 
+        password.setBounds(174, 528, 412, 65);                                                               
+        password.setBackground(new Color(0xF5F6FA));
+        password.setBorder(null);
+        password.setFont(new Font("sanchez", Font.PLAIN, 20));
+        password.setForeground(Color.GRAY); 
+        password.setEchoChar((char) 0);
 
-        pass.setFocusable(false);
+      
 
-        pass.addMouseListener(new MouseAdapter() {
+        password.addFocusListener(new FocusAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                pass.setFocusable(true);
-                pass.requestFocusInWindow();
+            public void focusGained(FocusEvent e) {
+                if(password.getText().equals(password_Placeholder)){
+                password.setText("");
+                password.setForeground(Color.BLACK);
+                password.setEchoChar('•');
+                    }
+                }
+        
 
-                pass.setText("");
-                pass.setForeground(Color.BLACK);
-                pass.setEchoChar('•');
-
-            }
-        });
-
-        pass.addFocusListener(new FocusAdapter() {
+        
             public void focusLost(FocusEvent e) {
-                if (pass.getPassword().length == 0) {
-                    pass.setText(password);
-                    pass.setForeground(Color.GRAY);
-                    pass.setEchoChar((char) (0));
-                    pass.setFocusable(false); 
+                if (password.getPassword().length == 0) {
+                    password.setText(password_Placeholder);
+                    password.setForeground(Color.GRAY);
+                    password.setEchoChar((char) (0));
+                    
                 }
             }
         });
 
         
-        String cpass = "Enter Confirm Password"; //Conform password =========                                              
-        JPasswordField cpass_input = new JPasswordField(cpass);   
-        cpass_input.setBounds(176, 623, 412, 63);
-        cpass_input.setBackground(new Color(0xF5F6FA));
-        cpass_input.setBorder(null);
-        cpass_input.setFont(new Font("sanchez", Font.PLAIN, 20));
-        cpass_input.setForeground(Color.GRAY);
-        cpass_input.setEchoChar((char) 0);
+        String ConfirmPass_Placehodler = "Enter Confirm Password"; //Conform password =========                                              
+        JPasswordField confimrPass = new JPasswordField(ConfirmPass_Placehodler);   
+        confimrPass.setBounds(176, 623, 412, 63);
+        confimrPass.setBackground(new Color(0xF5F6FA));
+        confimrPass.setBorder(null);
+        confimrPass.setFont(new Font("sanchez", Font.PLAIN, 20));
+        confimrPass.setForeground(Color.GRAY);
+        confimrPass.setEchoChar((char) 0);
 
-        cpass_input.setFocusable(false);
-        
-
-        cpass_input.addMouseListener(new MouseAdapter() {
+        confimrPass.addFocusListener(new FocusAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                cpass_input.setFocusable(true);
-                cpass_input.requestFocusInWindow();
-
-                cpass_input.setText("");
-                cpass_input.setForeground(Color.BLACK);
-                cpass_input.setEchoChar('•');
+            public void focusGained(FocusEvent e) {
+                if(confimrPass.getText().equals(ConfirmPass_Placehodler)){
+                confimrPass.setText("");
+                confimrPass.setForeground(Color.BLACK);
+                confimrPass.setEchoChar('•');
+                }
             }
-        });
-
-        cpass_input.addFocusListener(new FocusAdapter() { 
             public void focusLost(FocusEvent e) {
-                if (cpass_input.getPassword().length == 0) {
-                    cpass_input.setText(cpass);
-                    cpass_input.setForeground(Color.GRAY);
-                    cpass_input.setEchoChar((char)(0));
-                    cpass_input.setFocusable(false); 
+                if (confimrPass.getPassword().length == 0) {
+                    confimrPass.setText(ConfirmPass_Placehodler);
+                    confimrPass.setForeground(Color.GRAY);
+                    confimrPass.setEchoChar((char)(0));
+                    
                 }
             }
         });
@@ -199,18 +188,18 @@ public class Register extends javax.swing.JPanel {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fullname.setText(username);
+                fullname.setText(username_Placeholder);
                 fullname.setForeground(Color.GRAY);
-                mail.setText(email);
+                mail.setText(email_Placeholder);
                 mail.setForeground(Color.GRAY);
-                si.setText(id);
-                si.setForeground(Color.GRAY);
-                pass.setText(password);
-                pass.setEchoChar((char) (0));
-                pass.setForeground(Color.GRAY);
-                cpass_input.setText(cpass);
-                cpass_input.setEchoChar((char)(0));
-                cpass_input.setForeground(Color.GRAY);
+                Stduent_ID.setText(id_Placeholder);
+                Stduent_ID.setForeground(Color.GRAY);
+                password.setText(password_Placeholder);
+                password.setEchoChar((char) (0));
+                password.setForeground(Color.GRAY);
+                confimrPass.setText(ConfirmPass_Placehodler);
+                confimrPass.setEchoChar((char)(0));
+                confimrPass.setForeground(Color.GRAY);
                
                 
 
@@ -230,19 +219,19 @@ public class Register extends javax.swing.JPanel {
                
                   if (
                         fullname.getText().trim().isEmpty()         ||
-                        fullname.getText().equals(username)         ||
+                        fullname.getText().equals(username_Placeholder)         ||
 
                         mail.getText().trim().isEmpty()             ||
-                        mail.getText().equals(email)                ||
+                        mail.getText().equals(email_Placeholder)                ||
 
-                        si.getText().trim().isEmpty()               ||
-                        si.getText().equals(id)                     ||
+                        Stduent_ID.getText().trim().isEmpty()               ||
+                        Stduent_ID.getText().equals(id_Placeholder)                     ||
 
-                        new String(pass.getPassword()).equals(password)||
-                        pass.getPassword().length == 0              ||
+                        new String(password.getPassword()).equals(password_Placeholder)||
+                        password.getPassword().length == 0              ||
 
-                        new String (cpass_input.getPassword()).equals(cpass) ||
-                        cpass_input.getPassword().length == 0) {
+                        new String (confimrPass.getPassword()).equals(ConfirmPass_Placehodler) ||
+                        confimrPass.getPassword().length == 0) {
 
                             JOptionPane.showMessageDialog(frame,  
                             "Please fill out all required fields.",
@@ -252,8 +241,8 @@ public class Register extends javax.swing.JPanel {
                                 return;
                             } 
 
-                        String Password = new String(pass.getPassword());
-                        String confirmPassword = new String(cpass_input.getPassword());
+                        String Password = new String(password.getPassword());
+                        String confirmPassword = new String(confimrPass.getPassword());
                         if(!Password.equals(confirmPassword)){
                                     JOptionPane.showMessageDialog(frame, 
                                         "Password do not match, Please Try again.", 
@@ -275,9 +264,9 @@ public class Register extends javax.swing.JPanel {
         bg.add(btnBack);
         bg.add(fullname);
         bg.add(mail);
-        bg.add(si);
-        bg.add(pass);
-        bg.add(cpass_input);
+        bg.add(Stduent_ID);
+        bg.add(password);
+        bg.add(confimrPass);
         bg.add(clearButton);
         bg.add(CreateButton);
 

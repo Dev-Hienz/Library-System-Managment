@@ -38,18 +38,18 @@ public class Login extends javax.swing.JPanel {
             @Override
             public void focusGained(FocusEvent e) {
             if (username.getText().equals(text_placeholder)) {
-            username.setText("");
-            username.setForeground(Color.BLACK);
-        }
-    }
+                username.setText("");
+                username.setForeground(Color.BLACK);
+                    }
+                }
             @Override
-        public void focusLost(FocusEvent e) {
+            public void focusLost(FocusEvent e) {
             if (username.getText().isEmpty()) {
             username.setText(text_placeholder);
             username.setForeground(Color.GRAY);
-        }
-    }
-});
+            }
+            }
+        });
         String pass_Placefolder = "Enter your password"; 
 
         JPasswordField password = new JPasswordField(pass_Placefolder); // Password field
