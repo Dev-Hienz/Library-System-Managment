@@ -44,9 +44,7 @@ public class Register extends javax.swing.JPanel {
             }
         });
 
-        //fristname =========================================
-
-        String firstname_Placeholder = "First name";
+        String firstname_Placeholder = "First name"; //fristname =========================================
 
         JTextField firstname = new JTextField(firstname_Placeholder);                                              
         firstname.setBounds(183, 283, 380, 50);
@@ -63,7 +61,6 @@ public class Register extends javax.swing.JPanel {
                     firstname.setForeground(Color.BLACK);
                     }
                 }
-        
             public void focusLost(FocusEvent e) { 
             if (firstname.getText().isEmpty()){
                 firstname.setText(firstname_Placeholder);
@@ -72,9 +69,7 @@ public class Register extends javax.swing.JPanel {
                 }
         });
 
-        //lastname============================================
-
-        String lastname_Placeholder = "Last name";
+        String lastname_Placeholder = "Last name"; //lastname============================================
 
         JTextField lastname = new JTextField(lastname_Placeholder);                                              
         lastname.setBounds(183, 354, 380, 50);
@@ -126,7 +121,7 @@ public class Register extends javax.swing.JPanel {
             }
         });
 
-        String id_Placeholder = "Enter Student ID"; // student ID ================================
+        String id_Placeholder = "Enter Student ID No."; // student ID ================================
         
         JTextField Stduent_ID = new JTextField(id_Placeholder); 
         Stduent_ID.setBounds(183, 494, 380, 50);
@@ -143,7 +138,6 @@ public class Register extends javax.swing.JPanel {
                 Stduent_ID.setForeground(Color.BLACK);
                 }
             }
-        
             public void focusLost(FocusEvent e) {
                 if (Stduent_ID.getText().isEmpty()) {
                     Stduent_ID.setText(id_Placeholder);
@@ -162,8 +156,6 @@ public class Register extends javax.swing.JPanel {
         password.setForeground(Color.GRAY); 
         password.setEchoChar((char) 0);
 
-      
-
         password.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
@@ -174,19 +166,15 @@ public class Register extends javax.swing.JPanel {
                     }
                 }
         
-
-        
             public void focusLost(FocusEvent e) {
                 if (password.getPassword().length == 0) {
                     password.setText(password_Placeholder);
                     password.setForeground(Color.GRAY);
-                    password.setEchoChar((char) (0));
-                    
+                    password.setEchoChar((char) (0)); 
                 }
             }
         });
 
-        
         String ConfirmPass_Placehodler = "Enter Confirm Password"; //Conform password =========                                              
         JPasswordField confimrPass = new JPasswordField(ConfirmPass_Placehodler);   
         confimrPass.setBounds(183, 633, 380, 50);
@@ -238,13 +226,9 @@ public class Register extends javax.swing.JPanel {
                 confimrPass.setText(ConfirmPass_Placehodler);
                 confimrPass.setEchoChar((char)(0));
                 confimrPass.setForeground(Color.GRAY);
-               
-                
-
             }
         });
        
-
         JButton CreateButton = new JButton();
         CreateButton.setBounds(385, 733, 193, 63);
         CreateButton.setOpaque(false);
@@ -309,7 +293,6 @@ public class Register extends javax.swing.JPanel {
         bg.add(confimrPass);
         bg.add(clearButton);
         bg.add(CreateButton);
-
         this.setVisible(true);
 
     }
