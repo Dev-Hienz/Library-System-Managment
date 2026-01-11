@@ -39,7 +39,7 @@ public class Register extends javax.swing.JPanel {
             }
         });
 
-        String username_Placeholder = "Enter Fullname";
+        String username_Placeholder = "Surname, Firstname, M.I.";
 
         JTextField fullname = new JTextField(username_Placeholder);                                              
         fullname.setBounds(174, 246, 412, 65);

@@ -19,7 +19,7 @@ public class Dashboard extends javax.swing.JPanel {
 
         JLabel background = new JLabel();
         background.setBounds(0,0, 1512, 982);
-        background.setIcon(new ImageIcon("PEKTURS/Admin_Dashboard.png"));
+        background.setIcon(new ImageIcon("PEKTURS/Dashboard.png"));
         background.setLayout(null);
 
         JButton Book_Management = new JButton();
@@ -38,9 +38,11 @@ public class Dashboard extends javax.swing.JPanel {
             }
         });
 
+        
 
         this.add(background);
         background.add(Book_Management);
+
     }
 }
 

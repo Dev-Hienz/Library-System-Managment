@@ -3,11 +3,12 @@ package ADMIN;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.event.*;
 
 public class Login extends javax.swing.JPanel {
 
     private MainFrame frame;
-    
+    int limit = 3;
 
     public Login(MainFrame frame) {
         this.frame = frame;
@@ -41,6 +42,7 @@ public class Login extends javax.swing.JPanel {
             if (username.getText().equals(text_placeholder)) {
                 username.setText("");
                 username.setForeground(Color.BLACK);
+                
                     }
                 }
             @Override
@@ -51,7 +53,8 @@ public class Login extends javax.swing.JPanel {
             }
             }
         });
-// ================= PASSWORD FIELD =================
+
+            // ================= PASSWORD FIELD =================
 
             String pass_Placeholder = "Enter your password";
 
@@ -159,13 +162,15 @@ public class Login extends javax.swing.JPanel {
 
                 // CONNECT TO DB`
 
+                while(limit > 0){
 
                 if (username.getText().trim().isEmpty() ||
                 username.getText().equals(text_placeholder)  ||
                 new String(password.getPassword()).equals(pass_Placeholder)||
                             password.getPassword().length == 0){
-                    JOptionPane.showMessageDialog(frame, "Please enter both email and password.", "Input Error",
+                    JOptionPane.showMessageDialog(frame, "Please enter both email and password. atteompts left : " + limit, "Input Error",
                             JOptionPane.ERROR_MESSAGE);
+                            limit--;
                     return;
                     
                 } else if (username.getText().equals("Earnest") || password.getText().equals("admin123")) {
@@ -176,13 +181,23 @@ public class Login extends javax.swing.JPanel {
 
                     return;
                 } else {
-                    JOptionPane.showMessageDialog(frame, "Invalid email or password.", "Login Error",
+                    JOptionPane.showMessageDialog(frame, "Invalid email or password. Attempts left : " + limit, "Login Error",
                             JOptionPane.ERROR_MESSAGE);
+                            limit--;
                     return;
                 }
 
-            }
+                }
+        }
         });
+
+        if (limit == 0){
+
+                username.setEnabled(true);
+                password.setEnabled(false);
+                
+
+            }
 
         JButton registernow = new JButton();
         registernow.setBounds(390, 774, 106, 19);
