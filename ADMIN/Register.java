@@ -21,12 +21,17 @@ public class Register extends javax.swing.JPanel {
     
         JLabel bg = new JLabel();
         bg.setBounds(0, 0, 1512, 982);
-        bg.setIcon(new ImageIcon("PEKTURS/REGISTER PAGE .png"));
+        bg.setIcon(new ImageIcon("PEKTURS\\REGISTER PAGE .png"));
         bg.setLayout(null);
+
+        JLabel bg1 = new JLabel();
+        bg1.setBounds(845, 150, 600, 600);
+        bg1.setIcon(new ImageIcon("PEKTURS\\registration.gif"));
+        bg1.setLayout(null);
 
         JButton btnBack = new JButton();
         btnBack.setForeground(Color.BLACK);
-        btnBack.setBounds(431,826,92,19);
+        btnBack.setBounds(412,823,84,17);
         btnBack.setOpaque(false);
         btnBack.setBorderPainted(false);
         btnBack.setContentAreaFilled(false);
@@ -39,28 +44,58 @@ public class Register extends javax.swing.JPanel {
             }
         });
 
-        String username_Placeholder = "Surname, Firstname, M.I.";
+        //fristname =========================================
 
-        JTextField fullname = new JTextField(username_Placeholder);                                              
-        fullname.setBounds(174, 246, 412, 65);
-        fullname.setBackground(new Color(0xF5F6FA));
-        fullname.setBorder(null);
-        fullname.setFont(new Font("sanchez", Font.PLAIN, 20));
-        fullname.setForeground(Color.GRAY);
+        String firstname_Placeholder = "First name";
 
-        fullname.addFocusListener(new FocusAdapter() {
+        JTextField firstname = new JTextField(firstname_Placeholder);                                              
+        firstname.setBounds(183, 283, 380, 50);
+        firstname.setBackground(new Color(0xF5F6FA));
+        firstname.setBorder(null);
+        firstname.setFont(new Font("sanchez", Font.PLAIN, 20));
+        firstname.setForeground(Color.GRAY);
+
+        firstname.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
-                if(fullname.getText().equals(username_Placeholder)){
-                    fullname.setText("");
-                    fullname.setForeground(Color.BLACK);
+                if(firstname.getText().equals(firstname_Placeholder)){
+                    firstname.setText("");
+                    firstname.setForeground(Color.BLACK);
                     }
                 }
         
             public void focusLost(FocusEvent e) { 
-            if (fullname.getText().isEmpty()){
-                fullname.setText(username_Placeholder);
-                fullname.setForeground(Color.gray);
+            if (firstname.getText().isEmpty()){
+                firstname.setText(firstname_Placeholder);
+                firstname.setForeground(Color.gray);
+                    }
+                }
+        });
+
+        //lastname============================================
+
+        String lastname_Placeholder = "Last name";
+
+        JTextField lastname = new JTextField(lastname_Placeholder);                                              
+        lastname.setBounds(183, 354, 380, 50);
+        lastname.setBackground(new Color(0xF5F6FA));
+        lastname.setBorder(null);
+        lastname.setFont(new Font("sanchez", Font.PLAIN, 20));
+        lastname.setForeground(Color.GRAY);
+
+        lastname.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if(lastname.getText().equals(lastname_Placeholder)){
+                    lastname.setText("");
+                    lastname.setForeground(Color.BLACK);
+                    }
+                }
+        
+            public void focusLost(FocusEvent e) { 
+            if (lastname.getText().isEmpty()){
+                lastname.setText(lastname_Placeholder);
+                lastname.setForeground(Color.gray);
                     }
                 }
         });
@@ -68,7 +103,7 @@ public class Register extends javax.swing.JPanel {
         String email_Placeholder = "Enter Email"; //Email =============================================
         
         JTextField mail = new JTextField(email_Placeholder); 
-        mail.setBounds(174, 340, 412, 65);
+        mail.setBounds(183, 424, 380, 50);
         mail.setBackground(new Color(0xF5F6FA));
         mail.setBorder(null);
         mail.setFont(new Font("sanchez", Font.PLAIN, 20));
@@ -94,7 +129,7 @@ public class Register extends javax.swing.JPanel {
         String id_Placeholder = "Enter Student ID"; // student ID ================================
         
         JTextField Stduent_ID = new JTextField(id_Placeholder); 
-        Stduent_ID.setBounds(174, 434, 412, 65);
+        Stduent_ID.setBounds(183, 494, 380, 50);
         Stduent_ID.setBackground(new Color(0xF5F6FA));
         Stduent_ID.setBorder(null);
         Stduent_ID.setFont(new Font("sanchez", Font.PLAIN, 20));
@@ -120,7 +155,7 @@ public class Register extends javax.swing.JPanel {
         String password_Placeholder = "Enter Password"; // Password field ================================
         
         JPasswordField password = new JPasswordField(password_Placeholder); 
-        password.setBounds(174, 528, 412, 65);                                                               
+        password.setBounds(183, 564, 380, 50);                                                               
         password.setBackground(new Color(0xF5F6FA));
         password.setBorder(null);
         password.setFont(new Font("sanchez", Font.PLAIN, 20));
@@ -154,7 +189,7 @@ public class Register extends javax.swing.JPanel {
         
         String ConfirmPass_Placehodler = "Enter Confirm Password"; //Conform password =========                                              
         JPasswordField confimrPass = new JPasswordField(ConfirmPass_Placehodler);   
-        confimrPass.setBounds(176, 623, 412, 63);
+        confimrPass.setBounds(183, 633, 380, 50);
         confimrPass.setBackground(new Color(0xF5F6FA));
         confimrPass.setBorder(null);
         confimrPass.setFont(new Font("sanchez", Font.PLAIN, 20));
@@ -181,7 +216,7 @@ public class Register extends javax.swing.JPanel {
         });
 
         JButton clearButton = new JButton();
-        clearButton.setBounds(149, 727, 210, 68);
+        clearButton.setBounds(168, 733, 193, 62);
         clearButton.setOpaque(false);
         clearButton.setContentAreaFilled(false);
         clearButton.setBorderPainted(false);
@@ -189,8 +224,10 @@ public class Register extends javax.swing.JPanel {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                fullname.setText(username_Placeholder);
-                fullname.setForeground(Color.GRAY);
+                firstname.setText(firstname_Placeholder);
+                firstname.setForeground(Color.GRAY);
+                lastname.setText(lastname_Placeholder);
+                lastname.setForeground(Color.GRAY);
                 mail.setText(email_Placeholder);
                 mail.setForeground(Color.GRAY);
                 Stduent_ID.setText(id_Placeholder);
@@ -209,7 +246,7 @@ public class Register extends javax.swing.JPanel {
        
 
         JButton CreateButton = new JButton();
-        CreateButton.setBounds(387, 727, 210, 68);
+        CreateButton.setBounds(385, 733, 193, 63);
         CreateButton.setOpaque(false);
         CreateButton.setContentAreaFilled(false);
         CreateButton.setBorderPainted(false);
@@ -219,8 +256,10 @@ public class Register extends javax.swing.JPanel {
             public void actionPerformed(ActionEvent e) {
                
                   if (
-                        fullname.getText().trim().isEmpty()                     ||
-                        fullname.getText().equals(username_Placeholder)         ||
+                        firstname.getText().trim().isEmpty()                     ||
+                        firstname.getText().equals(firstname_Placeholder)         ||
+                        lastname.getText().trim().isEmpty() ||
+                        lastname.getText().equals(lastname_Placeholder)||
                         mail.getText().trim().isEmpty()                         ||
                         mail.getText().equals(email_Placeholder)                ||
                         Stduent_ID.getText().trim().isEmpty()                   ||
@@ -260,8 +299,10 @@ public class Register extends javax.swing.JPanel {
                     }
         });
         add(bg);
+        bg.add(bg1);
         bg.add(btnBack);
-        bg.add(fullname);
+        bg.add(firstname);
+        bg.add(lastname);
         bg.add(mail);
         bg.add(Stduent_ID);
         bg.add(password);
